@@ -1,0 +1,27 @@
+name: Rust
+
+on:
+  push:
+    branches: [ "mainline" ]
+  pull_request:
+    branches: [ "mainline" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install thumbv7em toolchain
+      run: rustup target add thumbv7em-none-eabihf
+    - name: Build
+      run: cargo build --verbose
+    # Don't bother running tests for now because our crate does not have any
+    #
+    # todo: #4 uncomment this when we have some tests
+    # - name: Run tests
+    #   run: cargo test --verbose
