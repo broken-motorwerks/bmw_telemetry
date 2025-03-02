@@ -5,27 +5,26 @@ edition = "2021"
 
 [dependencies]
 embassy-sync = { version = "0.6.0", features = ["defmt"] }
-embassy-executor = { version = "0.6.0", features = [
+embassy-executor = { version = "0.7.0", features = [
     "arch-cortex-m",
     "executor-thread",
     "executor-interrupt",
     "defmt",
-    "integrated-timers",
-], git = "https://github.com/embassy-rs/embassy.git" }
-embassy-stm32 = { version = "0.1.0", features = [
+] }
+embassy-stm32 = { version = "0.2.0", features = [
     "defmt",
     "stm32f303vc",
     "unstable-pac",
     "memory-x",
     "time-driver-any",
     "exti",
-], git = "https://github.com/embassy-rs/embassy.git" }
+] }
 defmt = "0.3.8"
-embassy-time = { version = "0.3.2", features = [
+embassy-time = { version = "0.4.0", features = [
     "defmt",
     "defmt-timestamp-uptime",
     "tick-hz-32_768",
-], git = "https://github.com/embassy-rs/embassy.git" }
+] }
 embassy-usb = { version = "0.3.0", features = ["defmt"] }
 embassy-futures = { version = "0.1.0" }
 
